@@ -1,0 +1,103 @@
+/**
+ * Singleton Class For Math Game
+ * @author Alex Phakdy
+ */
+import java.io.IOException;
+import java.util.Random;
+import java.util.Scanner;
+import java.util.*;
+
+public class MathGame {
+
+    private int score;
+    Random rand = new Random();
+    Scanner keyboard = new Scanner(System.in);
+    int score1 = 0;
+    String operArray[] = {+, -, *, /};
+    
+    /**
+     * Creates the math game
+     */
+    private MathGame() {
+        MathGame = new MathGame;
+    }
+
+    /**
+     * Checks if the math game exists, if not returns a new game
+     * @return game that exists or was created
+     */
+    public static MathGame getInstance() {
+        if (MathGame == null) {
+            System.out.println("Let's have fun with Math!")
+            MathGame = new MathGame();
+        }
+        return MathGame;
+    }    
+    
+    /**
+     * decides if the user is playing the game
+     */
+    public void play();{
+        System,out.println("Would you like to (p)lay or (q)uit?");
+        System.out.println("Enter the letter p or q to continue.");
+    
+        String playGame = keyboard.nextLine();
+
+            if(playGame == p) {
+                System.out.println("Starting game...");
+            }
+                else if(playGame == q) {
+                   System.out.println("Quitting game...");
+                   System.out.println("Here is your final score: " + score1 +" ");
+                }
+                else if(playGame != p) {
+                    System.out.println("Sorry, you must enter p or q.");
+                }
+                else if(playGame != q) {
+                    System.out.println("Sorry, you must enter p or q.");
+                }
+            return false;
+        }
+
+    /**
+     * Creates the randomly generated numbers and questions
+     * @return whether the user enters correct or incorrect answers
+     */    
+    public boolean playRound() {
+        
+        public static void main(String[] args) {
+            String randArray = operArray[new Random().nextInt(operArray.length)];
+
+       /**
+        * randomly generates numbers 1-100
+        */
+        Random rnd = new Random();
+        int randomNumber1 = rnd.nextInt(101);     // 0-100
+        int randomNumber2 = rnd.nextInt(100) + 1; // 1-100
+        boolean playing = true;
+
+       /**
+        * system prints out a random math equation by random numbers and an element contained in the array
+        * puts the game in a while loop so at the end the user will be able to select their choice
+        */
+        while(playing) {
+        System.out.print(" "randomNumber1 + " " + randArray +  " " + randomNumber2 + " = ")
+        int guessAnswer = keyboard.nextInt;
+        if (guessAnswer == randomNumber1 + randArray + randomNumber2) {
+        System.out.println("Correct :)");
+            score1++;
+            return true;
+        }
+        else {
+            System.out.println("Wrong :(");
+            return false;
+        }
+    }
+    /**
+     * decides if the user is playing the game again or not
+     */
+    System.out.println("Do you wish to play again? Y/N");
+    String answer = keyboard.nextLine();
+    playing = answer.equalsIgnoreCase("y");
+    }
+}
